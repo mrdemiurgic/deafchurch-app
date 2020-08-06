@@ -1,0 +1,85 @@
+@value breakpoints: '../../styles/breakpoints.module.css';
+@value bp1 from breakpoints;
+
+@value colors: '../../styles/colors.module.css';
+@value mapBase, whiteAlice, mapRoads, veryDarkGray, darkGray, mediumGray, borderGray, primary, primaryLight, primaryDark from colors;
+
+.topContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 6;
+  min-height: 50px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.parentContainer {
+  font-size: 0.8em;
+  box-sizing: border-box;
+  /* border: 1px solid mapRoads; */
+}
+
+.parentContainer .text {
+  color: whiteAlice;
+  font-weight: 500;
+  text-shadow: 0 0 5px mapBase;
+}
+
+.container {
+  /* padding: 5px; */
+  text-align: center;
+  /* background: mapBase; */
+  margin: 5px;
+  padding: 5px;
+  /* border-radius: 5px; */
+  /* border: 1px solid mapRoads; */
+}
+
+.text {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: 'Roboto Slab';
+  margin-bottom: 2px;
+  color: mapBase;
+  /* text-shadow: 1px 1px 3px black; */
+}
+
+.button {
+  pointer-events: auto;
+  font-family: 'Roboto Condensed';
+  display: block;
+  outline: none;
+  font-weight: 900;
+  padding: 5px;
+  margin: auto;
+  border-radius: 5px;
+  font-size: 0.9em;
+  border: 0;
+  background: primary;
+  /* text-decoration: underline; */
+  cursor: pointer;
+  transition: 0.2s color;
+  color: mapBase;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.button:hover {
+  color: primaryLight;
+}
+
+.button:active {
+  color: primaryDark;
+}
+
+@media screen and (min-width: bp1) {
+  .topContainer {
+    bottom: initial;
+    top: -5px;
+  }
+}

@@ -1,0 +1,69 @@
+@value whiteAlice: #EBF2FA;
+
+@value primaryDark: #DBBD16;
+@value primary: #ECD444;
+@value primaryLight: #F6E9A2;
+
+@value actionDark: #27AA68;
+@value action: #37D285;
+@value actionLight: #62DB9F;
+
+@value mapBase: #1b272d;
+@value mapBaseLight: #3C5768;
+
+@value mapGreenspace: #192420;
+@value mapWater: #163541;
+
+@value mapRoadsDark: #3A3E41;
+@value mapRoads: #636a6f;
+@value mapRoadsLight: #A4AAAE;
+
+/* https://coolors.co/1e2c34-636a6f-ecd444-37d285-ebf2fa */
+
+.buttonAction {
+  background: action;
+  border: 1px solid actionDark;
+  color: mapBase;
+}
+
+.buttonAction:hover {
+  background: actionLight;
+  border: 1px solid action;
+}
+
+.buttonAction:active {
+  background: actionDark;
+  border: 1px solid action;
+}
+
+.buttonPrimary {
+  background: primary;
+  border: 1px solid primaryDark;
+  color: mapBase;
+}
+
+.buttonPrimary:hover {
+  background: primaryLight;
+  border: 1px solid primary;
+}
+
+.buttonPrimary:active {
+  background: primaryDark;
+  border: 1px solid primary;
+}
+
+.buttonNeutral {
+  background: none;
+  border: 2px solid mapWater;
+  color: mapWater;
+}
+
+.buttonNeutral:hover {
+  border: 2px solid mapRoads;
+  color: mapRoads;
+}
+
+.buttonNeutral:active {
+  border: 2px solid mapWater;
+  color: mapWater;
+}

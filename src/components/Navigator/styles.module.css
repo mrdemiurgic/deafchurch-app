@@ -1,0 +1,31 @@
+@value colors: '../../styles/colors.module.css';
+@value mapBase, mapRoads, veryDarkGray, darkGray, mediumGray, borderGray, primary, primaryHover, primaryActive from colors;
+
+.container {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  box-sizing: border-box;
+}
+
+.button {
+  display: block-inline;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  box-shadow: 0 0 4px black;
+  text-shadow: 0 0 4px black;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s background;
+}
+
+.button:first-child {
+  margin-right: 10px;
+}
+
+.buttonIcon {
+  font-size: 2em;
+}

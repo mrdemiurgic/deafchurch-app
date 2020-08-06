@@ -1,0 +1,80 @@
+@value colors: '../../styles/colors.module.css';
+@value mapBase, mapBaseLight, veryDarkGray, borderGray, primary, primaryLight, primaryDark, mapBase from colors;
+
+.container {
+  width: 100%;
+  padding: 0 10px 5px 10px;
+  box-sizing: border-box;
+}
+
+.buttonContainer {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.button {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  font-family: 'Roboto Condensed';
+  color: mapBase;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 10px;
+  transform: scale(1);
+  box-sizing: border-box;
+  background: primary;
+  text-align: left;
+  position: relative;
+  transition: 0.2s border, 0.2s color, 0.2s box-shadow, 0.2s background,
+    0.2s transform;
+}
+
+/* .buttonContainer:first-child .button {
+  border-right: 1px solid mapBase;
+  border-radius: 10px 0 0 10px;
+}
+
+.buttonContainer:last-child .button {
+  border-left: 1px solid mapBase;
+  border-radius: 0 10px 10px 0;
+} */
+
+/* .button:hover {
+  color: mapBase;
+  background: primary;
+}
+
+.button:active {
+  color: mapBase;
+} */
+
+.selected {
+  transform: scale(1.08);
+}
+
+.unselected {
+  background: primaryLight;
+}
+
+.icon {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 15px;
+  height: 100%;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 40px;
+  margin-right: 5px;
+}

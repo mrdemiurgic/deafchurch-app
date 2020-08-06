@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  z-index: 3;
+  overflow-y: auto;
+  position: absolute;
+  background: #22222299;
+}

@@ -1,0 +1,80 @@
+@value breakpoints: '../../styles/breakpoints.module.css';
+@value bp1 from breakpoints;
+
+@value colors: '../../styles/colors.module.css';
+@value mapBase, mapRoads, mapRoadsLight, borderGray, whiteAlice, darkGray, mediumGray, primary, primaryHover, primaryActive from colors;
+
+.container {
+  width: 100%;
+  padding-top: 75px;
+  margin: auto;
+  position: absolute;
+}
+
+.alignedTop {
+  /* top: 75px; */
+  /* transform: translate(-50%, 0); */
+}
+
+.searchBarForm {
+}
+
+.title {
+  font-family: 'Roboto Slab';
+  font-size: 1.9em;
+  text-align: center;
+  font-weight: 700;
+  color: whiteAlice;
+}
+
+.inputContainer {
+  box-sizing: border-box;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid mapRoads;
+  background: whiteAlice;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.searchBarInput {
+  display: block;
+  outline: none;
+  height: 50px;
+  border: 0;
+  width: 100%;
+  padding: 0;
+  font-family: 'Roboto Condensed';
+  margin: 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  background: none;
+  color: mapBase;
+}
+
+.searchBarInput::placeholder {
+  opacity: 0.9;
+  color: mapRoads;
+}
+
+.filterBoxContainer {
+  margin: 10px;
+  margin-top: 0;
+  padding-top: 5px;
+  background: whiteAlice;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid mapRoads;
+}
+
+@media screen and (min-width: bp1) {
+  .container {
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+  }
+}

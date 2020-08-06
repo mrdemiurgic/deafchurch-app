@@ -1,0 +1,24 @@
+@value colors: '../../styles/colors.module.css';
+@value mapBase, whiteAlice from colors;
+
+.container {
+  background: #000000dd;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.innerContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.loaderText {
+  font-size: 1.5em;
+  color: whiteAlice;
+  margin-top: 10px;
+}

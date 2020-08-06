@@ -1,0 +1,95 @@
+@value colors: '../../styles/colors.module.css';
+@value whiteAlice, mapGreenspace, mapWater, mapWaterLight, mapRoadsDark, mapBaseLight, mapBase, mapRoads, mapRoadsLight, primary, primaryHover, primaryActive, darkGray, veryDarkGray, mediumGray, lightGray, veryLightGray from colors;
+
+.container {
+  width: auto;
+  margin: 10px;
+  top: 70px;
+  z-index: 1;
+  background: none;
+}
+
+.suggestion {
+  display: block;
+  position: relative;
+  background: whiteAlice;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid mapRoadsLight;
+  text-align: left;
+}
+
+.services {
+  margin-top: 5px;
+  background: mapBase;
+  padding: 6px;
+  border: 1px solid mapRoads;
+  border-radius: 5px;
+}
+
+.servicesText {
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1em;
+  color: whiteAlice;
+}
+
+.name {
+  font-size: 1.4em;
+  font-weight: 800;
+  color: mapBase;
+  font-family: 'Roboto Slab';
+}
+
+.secondaryLine {
+  font-family: 'Roboto Condensed';
+  margin-top: 5px;
+  font-size: 1em;
+  color: mapBase;
+  text-transform: uppercase;
+}
+
+.location {
+  display: inline;
+  font-weight: 900;
+}
+
+.buttonsContainer {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.buttonContainer {
+  vertical-align: top;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.button {
+  font-family: 'Roboto Condensed';
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 900;
+  height: 35px;
+  font-size: 0.9em;
+  width: 100%;
+  transition: 0.3s background, 0.3s color, 0.3s border;
+}
+
+.icon {
+  margin: 0;
+}
+
+.text {
+  display: inline-block;
+  margin-left: 4px;
+}

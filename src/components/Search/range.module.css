@@ -1,0 +1,28 @@
+@value colors: '../../styles/colors.module.css';
+@value whiteAlice,  mapBase, veryDarkGray, borderGray, primary, primaryHover, primaryActive from colors;
+
+.container {
+  text-align: center;
+  font-family: 'Roboto Condensed';
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: mapBase;
+  margin-top: 5px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+.select {
+  margin-left: 5px;
+  vertical-align: middle;
+  border: 2px solid mapBase;
+  border-radius: 10px;
+  background: none;
+  color: mapBase;
+  font-family: 'Roboto Condensed';
+  font-weight: 900;
+  text-transform: uppercase;
+  outline: none;
+  padding: 5px;
+  font-size: 1.1em;
+}

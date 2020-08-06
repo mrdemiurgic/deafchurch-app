@@ -1,0 +1,47 @@
+@value breakpoints: '../../styles/breakpoints.module.css';
+@value bp1 from breakpoints;
+
+@value colors: '../../styles/colors.module.css';
+@value mapBase from colors;
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 0.3s;
+}
+
+.container {
+  position: fixed;
+  transform: scale(1);
+  top: 0;
+  width: 100%;
+  z-index: 8;
+  padding: 10px 10px 0 10px;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.container > div {
+  font-size: 0.9em;
+  box-shadow: 0 0 5px mapBase;
+}
+
+@media screen and (min-width: bp1) {
+  .container {
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    top: initial;
+    bottom: 0;
+  }
+}

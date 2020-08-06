@@ -1,0 +1,27 @@
+[
+  {
+    "key": "Accessibility",
+    "label": "Accessibility",
+    "description": "Some services are interpreted."
+  },
+  {
+    "key": "Integrated",
+    "label": "Integrated",
+    "description": "Some bible study / sunday school services are led by Deaf people. Worship services are interpreted."
+  },
+  {
+    "key": "Supported",
+    "label": "Supported Deaf Church",
+    "description": "All services are fully signed and led by Deaf people."
+  },
+  {
+    "key": "Independent",
+    "label": "Independent Deaf Church",
+    "description": "All services are fully signed and led by Deaf people."
+  },
+  {
+    "key": "Unknown",
+    "label": "Unknown Type",
+    "description": "No information is available on type of services provided."
+  }
+]

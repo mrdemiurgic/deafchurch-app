@@ -1,0 +1,204 @@
+@value breakpoints: '../../styles/breakpoints.module.css';
+@value bp1 from breakpoints;
+
+@value colors: '../../styles/colors.module.css';
+@value primary, primaryLight, whiteAlice, primaryDark, mapRoads, mapBase, mapBaseLight from colors;
+
+.container {
+  width: 100%;
+}
+
+.innerContainer {
+  margin: 0;
+  background: whiteAlice;
+  padding-bottom: 10px;
+}
+
+.pixContainer {
+  position: relative;
+  width: 100%;
+  background: mapRoads;
+  color: whiteAlice;
+  padding: 23.4375% 0;
+}
+
+.noImageAvail {
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pix {
+  position: absolute;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shrug {
+  margin-top: 10px;
+}
+
+.headerContainer {
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: mapBase;
+  border-bottom: 2px solid mapRoads;
+}
+
+.headerName {
+  font-weight: 700;
+  padding: 10px;
+  font-size: 1.6em;
+  font-family: 'Roboto Slab';
+}
+
+.headerDenomination {
+  text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'Roboto Condensed';
+  padding: 0 10px 10px 10px;
+}
+
+.banner {
+  margin: 20px 12px 0 12px;
+  font-size: 1.4em;
+  font-weight: 700;
+  font-family: 'Roboto Condensed';
+}
+
+.bannerIcon {
+  margin-right: 10px;
+}
+
+.card {
+  background: mapBase;
+  border-radius: 5px;
+  border: 1px solid mapRoads;
+  color: whiteAlice;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 10px 10px 0 10px;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.ministryTypeIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  left: 10px;
+}
+
+.ministryTypeDescription {
+  margin-left: 50px;
+  min-height: 40px;
+  vertical-align: middle;
+  display: table;
+}
+
+.ministryTypeText {
+  font-size: 1.2em;
+  display: block;
+  padding: 2px;
+}
+
+.contentItem {
+  margin: 20px 15px;
+  display: flex;
+  font-size: 1.2em;
+}
+
+.contentLink {
+  color: primary;
+  text-decoration: none;
+  transition: 0.3s color;
+}
+
+.contentButtonWrapper {
+  margin: 10px;
+}
+
+.contentButton {
+  padding: 10px 0;
+  width: 100%;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: 0.3s background, 0.3s border, 0.3s color;
+  outline: none;
+  font-weight: 700;
+}
+
+.contentText {
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  margin-left: 15px;
+  display: block;
+}
+
+.contentIcon {
+  margin-right: 10px;
+}
+
+.serviceContainer {
+  display: block;
+  list-style: none;
+  border: 0.1px solid mapRoads;
+  border-radius: 5px;
+  background: mapRoads;
+  padding-inline-start: 10px;
+}
+
+.serviceDay {
+  font-size: 1.3em;
+  font-weight: 500;
+  border-bottom: 1px solid mapRoads;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.timeBox {
+  display: inline-block;
+  color: mapBase;
+  margin: 2px 5px 2px 0;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 4px 5px;
+  border-radius: 5px;
+}
+
+.timeBoxText {
+  display: inline-block;
+}
+
+.timeBoxIcon {
+  margin-left: 5px;
+}
+
+@media screen and (min-width: bp1) {
+  .container {
+    width: 400px;
+    margin: auto;
+  }
+
+  .innerContainer {
+    border-radius: 0;
+    border: 0;
+    border-right: 1px solid mapRoads;
+    border-left: 1px solid mapRoads;
+  }
+}
