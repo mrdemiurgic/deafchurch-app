@@ -11,8 +11,8 @@ const url = `https://api.ipdata.co?api-key=${process.env.REACT_APP_IPDATA_KEY}`;
 
 // Attempt ipdata.co first. If it fails, fallback to using browser's location service.
 
-const fromLocationService = async ():Promise<LongLat> => new Promise(
-  (resolve, reject) => {
+const fromLocationService = async (): Promise<LongLat> =>
+  new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { longitude, latitude } = position.coords;
@@ -21,21 +21,22 @@ const fromLocationService = async ():Promise<LongLat> => new Promise(
     } else {
       reject(new Error('navigator.geolocation not available'));
     }
-  },
-);
+  });
 
 const fromIpData = async (): Promise<LongLat> => {
-  try {
-    const { status, data } = await axios.get(url);
-
-    if (status === 200) {
-      return [data.longitude, data.latitude];
-    }
-    throw new Error('unable to use ipdata.co');
-  } catch (error) {
-    const result = await fromLocationService();
-    return result;
+  const { status, data } = await axios.get(url);
+  if (status === 200) {
+    return [data.longitude, data.latitude];
   }
+  throw new Error('unable to use ipdata.co');
 };
 
-export default fromIpData;
+export default async (): Promise<LongLat> => {
+  try {
+    const location = await fromIpData();
+    return location;
+  } catch (error) {
+    const location = await fromLocationService();
+    return location;
+  }
+};

@@ -53,17 +53,17 @@
 }
 
 .buttonNeutral {
-  background: none;
-  border: 2px solid mapWater;
+  background: whiteAlice;
+  border: 1px solid mapWater;
   color: mapWater;
 }
 
 .buttonNeutral:hover {
-  border: 2px solid mapRoads;
+  border: 1px solid mapRoads;
   color: mapRoads;
 }
 
 .buttonNeutral:active {
-  border: 2px solid mapWater;
+  border: 1px solid mapWater;
   color: mapWater;
 }

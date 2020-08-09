@@ -7,7 +7,7 @@ import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
 
-import { hover, unselect } from '../../store/markers';
+import { hover, select } from '../../store/markers';
 import { hideOverlay } from '../../store/userInterface';
 import { setLongLat, setZoom } from '../../store/viewport';
 
@@ -20,8 +20,8 @@ export default (): JSX.Element => {
   const { id, longLat } = useSelector(getSelectedMarker);
 
   const seeMap = () => {
-    dispatch(unselect());
     dispatch(hover(id));
+    dispatch(select(id));
     dispatch(hideOverlay());
     dispatch(setLongLat(longLat));
     dispatch(setZoom([9]));

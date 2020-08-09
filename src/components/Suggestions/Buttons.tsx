@@ -29,7 +29,7 @@ export default (props: Props): JSX.Element => {
   const { id, name, longLat } = props;
   const dispatch = useDispatch();
 
-  const drive = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const drive = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const url = directions(`${longLat[1]},${longLat[0]}`);
     window.open(url);
   };
@@ -47,17 +47,22 @@ export default (props: Props): JSX.Element => {
 
   const numButtons = 2 + (hasShare ? 1 : 0);
   const width = `${100 / numButtons}%`;
+  const fontSize = hasShare ? '1.3em' : '1em';
 
   return (
     <div className={styles.buttonsContainer}>
-      <div className={styles.buttonContainer} style={{ width }}>
+      <div
+        className={`${styles.buttonContainer} ${hasShare && styles.third}`}
+        style={{ width }}
+      >
         <button
           type="button"
           className={`${styles.button} ${colors.buttonNeutral}`}
           onClick={moreInfo}
+          style={{ fontSize }}
         >
           <FontAwesomeIcon icon={faInfoCircle} className={styles.icon} />
-          {numButtons < 4 && (
+          {numButtons < 3 && (
             <div className={styles.text}>
               {numButtons < 3 ? 'more info' : 'info'}
             </div>
@@ -66,25 +71,33 @@ export default (props: Props): JSX.Element => {
       </div>
 
       {hasShare && (
-        <div className={styles.buttonContainer} style={{ width }}>
+        <div
+          className={`${styles.buttonContainer} ${styles.third}`}
+          style={{ width }}
+        >
           <button
             type="button"
             className={`${styles.button} ${colors.buttonPrimary}`}
             onClick={shareChurch}
+            style={{ fontSize }}
           >
             <FontAwesomeIcon icon={faShareAlt} className={styles.icon} />
-            {numButtons < 4 && <div className={styles.text}>share</div>}
+            {numButtons < 3 && <div className={styles.text}>share</div>}
           </button>
         </div>
       )}
-      <div className={styles.buttonContainer} style={{ width }}>
+      <div
+        className={`${styles.buttonContainer} ${hasShare && styles.third}`}
+        style={{ width }}
+      >
         <button
           type="button"
           className={`${styles.button} ${colors.buttonAction}`}
           onClick={drive}
+          style={{ fontSize }}
         >
           <FontAwesomeIcon icon={faDirections} className={styles.icon} />
-          {numButtons < 4 && (
+          {numButtons < 3 && (
             <div className={styles.text}>
               {numButtons < 3 ? 'directions' : 'gps'}
             </div>

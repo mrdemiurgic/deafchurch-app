@@ -48,8 +48,11 @@ export default (): JSX.Element => {
           className={deafChurchesClasses}
           onClick={showDeafChurches}
         >
+          {/* <div className={styles.iconWrapper}> */}
           <FontAwesomeIcon className={styles.icon} icon={faSignLanguage} />
-          <div className={styles.text}>Deaf Churches</div>
+          {/* </div> */}
+          {/* <div className={styles.text}>Deaf Churches</div> */}
+          Deaf Churches
         </button>
       </div>
       <div className={styles.buttonContainer}>
@@ -58,11 +61,14 @@ export default (): JSX.Element => {
           className={hearingChurchesClasses}
           onClick={showHearingChurches}
         >
+          {/* <div className={styles.iconWrapper}> */}
           <FontAwesomeIcon
             className={styles.icon}
             icon={faAmericanSignLanguageInterpreting}
           />
-          <div className={styles.text}>Interpreted Churches</div>
+          {/* </div> */}
+          {/* <div className={styles.text}>Interpreted Churches</div> */}
+          Interpreted Churches
         </button>
       </div>
     </div>

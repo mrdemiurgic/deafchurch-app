@@ -30,21 +30,11 @@
   transform: scale(1);
   box-sizing: border-box;
   background: primary;
-  text-align: left;
+  text-align: center;
   position: relative;
   transition: 0.2s border, 0.2s color, 0.2s box-shadow, 0.2s background,
     0.2s transform;
 }
-
-/* .buttonContainer:first-child .button {
-  border-right: 1px solid mapBase;
-  border-radius: 10px 0 0 10px;
-}
-
-.buttonContainer:last-child .button {
-  border-left: 1px solid mapBase;
-  border-radius: 0 10px 10px 0;
-} */
 
 /* .button:hover {
   color: mapBase;
@@ -56,7 +46,7 @@
 } */
 
 .selected {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .unselected {
@@ -64,17 +54,25 @@
 }
 
 .icon {
+  /* height: 100%; */
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.iconWrapper {
+  width: 25px;
   position: absolute;
-  display: block;
+  left: 5px;
   top: 0;
-  left: 15px;
   height: 100%;
+  text-align: center;
 }
 
 .text {
+  display: block;
+  /* height: 100%; */
   position: absolute;
   top: 50%;
+  left: 31px;
   transform: translateY(-50%);
-  margin-left: 40px;
-  margin-right: 5px;
 }

@@ -5,18 +5,9 @@
 @value mapBase, mapRoads, mapRoadsLight, borderGray, whiteAlice, darkGray, mediumGray, primary, primaryHover, primaryActive from colors;
 
 .container {
+  position: relative;
   width: 100%;
-  padding-top: 75px;
-  margin: auto;
-  position: absolute;
-}
-
-.alignedTop {
-  /* top: 75px; */
-  /* transform: translate(-50%, 0); */
-}
-
-.searchBarForm {
+  margin-top: 75px;
 }
 
 .title {
@@ -28,6 +19,7 @@
 }
 
 .inputContainer {
+  position: relative;
   box-sizing: border-box;
   margin: 10px;
   border-radius: 5px;
@@ -50,6 +42,7 @@
   font-family: 'Roboto Condensed';
   margin: 0;
   padding-left: 10px;
+  padding-right: 50px;
   box-sizing: border-box;
   font-size: 1.1em;
   background: none;
@@ -73,6 +66,7 @@
 
 @media screen and (min-width: bp1) {
   .container {
+    position: absolute;
     width: 400px;
     left: 50%;
     margin-left: -200px;

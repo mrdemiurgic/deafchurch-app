@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
 
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { select, hover, fetchAllChurches } from '../store/markers';
 import { finishedLoading } from '../store/userInterface';
@@ -12,7 +12,6 @@ import { RootState } from '../store';
 export default (): void => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchAllChurches());
@@ -23,10 +22,10 @@ export default (): void => {
   useEffect(() => {
     if (markers.length > 0) {
       initializeEngine(markers);
-      const churchId = location.pathname.slice(1);
+      const id = location.pathname.slice(1);
 
-      if (churchId !== '') {
-        const church = markers.find((marker) => marker.id === churchId);
+      if (id !== '') {
+        const church = markers.find((marker) => marker.id === id);
 
         if (church !== undefined) {
           dispatch(
@@ -40,7 +39,6 @@ export default (): void => {
           dispatch(finishedLoading());
         } else {
           dispatch(setInitialCenterFromGeo());
-          history.push('/');
           // dispatch(finishedLoading());
         }
       } else {

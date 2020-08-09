@@ -56,12 +56,9 @@
   padding: 5px;
   margin: auto;
   border-radius: 5px;
-  font-size: 0.9em;
-  border: 0;
-  background: primary;
-  /* text-decoration: underline; */
+  font-size: 1em;
   cursor: pointer;
-  transition: 0.2s color;
+  transition: 0.2s color, 0.2s border;
   color: mapBase;
 }
 
@@ -69,17 +66,9 @@
   margin-right: 5px;
 }
 
-.button:hover {
-  color: primaryLight;
-}
-
-.button:active {
-  color: primaryDark;
-}
-
 @media screen and (min-width: bp1) {
   .topContainer {
     bottom: initial;
-    top: -5px;
+    top: 0;
   }
 }

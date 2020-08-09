@@ -28,7 +28,7 @@ export default (props: Props): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (show && showOverlay && containerRef.current !== null) {
+    if (showOverlay && containerRef.current !== null) {
       containerRef.current.scrollTop = 0;
     }
   }, [showOverlay, show, id]);
@@ -54,10 +54,17 @@ export default (props: Props): JSX.Element => {
     return () => {
       document.removeEventListener('keydown', captureEsc, false);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <CSSTransition in={showOverlay} classNames={fade} timeout={300}>
+    <CSSTransition
+      mountOnEnter
+      unmountOnExit
+      in={showOverlay}
+      classNames={fade}
+      timeout={300}
+    >
       <div
         ref={containerRef}
         role="none"

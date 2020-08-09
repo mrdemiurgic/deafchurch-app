@@ -5,6 +5,7 @@
 @value primary, primaryLight, whiteAlice, primaryDark, mapRoads, mapBase, mapBaseLight from colors;
 
 .container {
+  position: absolute;
   width: 100%;
 }
 
@@ -84,24 +85,9 @@
   color: whiteAlice;
   padding: 5px;
   box-sizing: border-box;
-  margin: 10px 10px 0 10px;
+  margin: 5px 10px 5px 10px;
   font-size: 0.9em;
   position: relative;
-}
-
-.ministryTypeIcon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2em;
-  left: 10px;
-}
-
-.ministryTypeDescription {
-  margin-left: 50px;
-  min-height: 40px;
-  vertical-align: middle;
-  display: table;
 }
 
 .ministryTypeText {
@@ -191,8 +177,11 @@
 
 @media screen and (min-width: bp1) {
   .container {
+    position: absolute;
     width: 400px;
-    margin: auto;
+    left: 50%;
+    margin: initial;
+    margin-left: -200px;
   }
 
   .innerContainer {

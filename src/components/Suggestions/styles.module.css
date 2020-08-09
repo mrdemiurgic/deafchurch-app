@@ -54,6 +54,16 @@
   text-transform: uppercase;
 }
 
+.seeMore {
+  font-family: 'Roboto Condensed';
+  margin: 5px;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  color: mapBase;
+}
+
 .location {
   display: inline;
   font-weight: 900;
@@ -62,13 +72,34 @@
 .buttonsContainer {
   width: 100%;
   padding-top: 10px;
+  box-sizing: border-box;
 }
 
 .buttonContainer {
   vertical-align: top;
   display: inline-block;
   box-sizing: border-box;
-  padding: 0 5px;
+  padding-right: 5px;
+}
+
+.buttonContainer:last-child {
+  padding-right: 0;
+  padding-left: 5px;
+}
+
+.third {
+  padding-right: 6.666px;
+  padding-left: 0;
+}
+
+.third:not(:first-child) {
+  padding-left: 3.333px;
+  padding-right: 3.333px;
+}
+
+.third:last-child {
+  padding-left: 6.666px;
+  padding-right: 0;
 }
 
 .button {
@@ -80,7 +111,6 @@
   text-transform: uppercase;
   font-weight: 900;
   height: 35px;
-  font-size: 0.9em;
   width: 100%;
   transition: 0.3s background, 0.3s color, 0.3s border;
 }

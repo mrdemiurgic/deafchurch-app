@@ -1,42 +1,31 @@
-
-.appear {
-    opacity: 0;
-    display: none;
-}
-
-.appearActive {
-    opacity: 0;
-    display: none;
-}
-
-.appearDone {
-    opacity: 0;
-    display: none;
-}
-
 .enter {
-    opacity: 0;
-} 
+  opacity: 0;
+  pointer-events: none;
+}
 
 .enterActive {
-    opacity: 1;
-    transition: 300ms opacity;
+  opacity: 1;
+  transition: 300ms opacity;
+  pointer-events: none;
 }
 
 .enterDone {
-    opacity: 1;
+  opacity: 1;
+  pointer-events: active;
 }
 
 .exit {
-    opacity: 1;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .exitActive {
-    transition: 300ms opacity;
-    opacity: 0;
+  transition: 300ms opacity;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .exitDone {
-    opacity: 0;
-    display: none;
+  opacity: 0;
+  pointer-events: none;
 }

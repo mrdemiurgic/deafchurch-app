@@ -13,6 +13,7 @@ import { unselect, unhover } from '../../store/markers';
 
 import { setLongLat, setZoom } from '../../store/viewport';
 
+import colors from '../../styles/colors.module.css';
 import styles from './styles.module.css';
 
 export default (): JSX.Element => {
@@ -39,7 +40,11 @@ export default (): JSX.Element => {
         {loading ? 'Locating...' : currentLocation}
       </div>
       {showReset && (
-        <button type="button" className={styles.button} onClick={resetLocation}>
+        <button
+          type="button"
+          className={`${styles.button} ${colors.buttonNeutral}`}
+          onClick={resetLocation}
+        >
           <FontAwesomeIcon icon={faUndoAlt} className={styles.icon} />
           {`Return to ${originalLocation}`}
         </button>

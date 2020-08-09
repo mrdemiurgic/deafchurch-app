@@ -20,7 +20,7 @@ export const initializeEngine = (churches: Church[]): void => {
 
 export const lookupEngine = (
   searchText: string,
-  center: LongLat
+  center: LongLat,
 ): SearchDocData[] => {
   if (searchText.length >= SEARCH_LETTER_LIMIT) {
     const searchResult = index.search(searchText, {
@@ -35,9 +35,9 @@ export const lookupEngine = (
       .sort(
         (suggestion1: SearchDocData, suggestion2: SearchDocData) =>
           distance(suggestion1.longLat, center) -
-          distance(suggestion2.longLat, center)
+          distance(suggestion2.longLat, center),
       );
-    // .splice(0, SUGGESTIONS_LIMIT);
+    // .slice(0, SUGGESTIONS_LIMIT);
     return suggestions;
   }
   return [];

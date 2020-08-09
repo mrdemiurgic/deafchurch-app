@@ -2,25 +2,22 @@ import { createSlice, createAction } from '@reduxjs/toolkit';
 import { SearchDocData } from '../../types/userInterface';
 import { setInitialCenterFromGeo } from '../viewport';
 
-type MapMode = 'changeLocation' | 'browse';
 type SuggestionsMode = 'deafChurches' | 'hearingChurches' | 'searchText';
 
 interface UserInterfaceState {
   searchText: string;
   searchRange: number; // in miles
   showOverlay: boolean;
-  mapMode: MapMode;
+  newlyLoaded: boolean;
   suggestionsMode: SuggestionsMode;
-  showSuggestions: boolean;
   loading: boolean;
 }
 
 const defaultState: UserInterfaceState = {
   searchText: '',
-  showSuggestions: false,
   searchRange: 75,
   loading: true,
-  mapMode: 'browse',
+  newlyLoaded: true,
   suggestionsMode: 'deafChurches',
   showOverlay: true,
 };
@@ -33,35 +30,26 @@ const userInterfaceSlice = createSlice({
   name: 'userInterface',
   initialState: defaultState,
   reducers: {
-    showSuggestions: (state) => {
-      state.showSuggestions = true;
-    },
-    hideSuggestions: (state) => {
-      state.showSuggestions = false;
-    },
     finishedLoading: (state) => {
       state.loading = false;
     },
     setSearchText: (state, action) => {
       state.searchText = action.payload;
       state.suggestionsMode = 'searchText';
-      // if (action.payload.length > 0) {
-      //   state.suggestionsMode = 'searchText';
-      // }
     },
     findDeafChurches: (state) => {
       state.suggestionsMode = 'deafChurches';
-      state.showSuggestions = true;
     },
     findHearingChurches: (state) => {
       state.suggestionsMode = 'hearingChurches';
-      state.showSuggestions = true;
     },
     showOverlay: (state) => {
       state.showOverlay = true;
+      state.newlyLoaded = false;
     },
     hideOverlay: (state) => {
       state.showOverlay = false;
+      state.newlyLoaded = false;
     },
     setSearchRange: (state, action) => {
       state.searchRange = action.payload;
@@ -78,8 +66,6 @@ const userInterfaceSlice = createSlice({
 });
 
 export const {
-  showSuggestions,
-  hideSuggestions,
   setSearchRange,
   showOverlay,
   hideOverlay,

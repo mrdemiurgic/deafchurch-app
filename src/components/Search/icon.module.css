@@ -1,0 +1,57 @@
+@value colors: '../../styles/colors.module.css';
+@value mapBase, mapRoads, mapWater, mapRoadsLight, borderGray, whiteAlice, darkGray, mediumGray, primary, primaryHover, primaryActive from colors;
+
+.container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  border-left: 1px solid mapRoads;
+  padding-left: 10px;
+  color: mapBase;
+  transform: translateY(-50%);
+}
+
+.icon {
+  font-size: 2em;
+}
+
+.eraseButton {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  transition: 0.3s color;
+  border: 0;
+  outline: none;
+  border-radius: 45px;
+  background: none;
+  width: 45px;
+  height: 45px;
+  color: mapWater;
+  right: 52px;
+  top: 50%;
+  transform: scale(1);
+  margin-top: -22.5px;
+  animation-name: pulse;
+  animation-duration: 800ms;
+  animation-iteration-count: 1;
+}
+
+.eraseButton:hover {
+  color: mapRoads;
+}
+
+.erasebutton:active {
+  color: mapWater;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
 
 import Map from '../Map';
 import Navigator from '../Navigator';
@@ -24,10 +23,8 @@ export default (): JSX.Element => {
       </Helmet>
       <Loading />
       <FadeOverlay>
-        <Switch>
-          <Route exact path="/" component={Search} />
-          <Route path="/:id" component={ChurchModal} />
-        </Switch>
+        <Search />
+        <ChurchModal />
       </FadeOverlay>
       <Map />
       <YourLocation />

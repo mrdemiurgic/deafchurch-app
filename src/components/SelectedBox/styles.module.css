@@ -28,7 +28,6 @@
   z-index: 8;
   padding: 10px 10px 0 10px;
   box-sizing: border-box;
-  pointer-events: auto;
 }
 
 .container > div {
