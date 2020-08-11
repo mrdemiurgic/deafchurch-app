@@ -1,5 +1,6 @@
 import React from 'react';
 
+import buttons from '../../styles/buttons.module.css';
 import colors from '../../styles/colors.module.css';
 import styles from './styles.module.css';
 
@@ -12,16 +13,16 @@ export default (props: Props): JSX.Element => {
   const { numSuggestions, onClick } = props;
   return (
     <div className={styles.suggestion}>
-      <div className={styles.seeMore}>
+      <div className={styles.seeRest}>
         {`${numSuggestions - 5} `}
         more suggestions
       </div>
       <button
         type="button"
-        className={`${styles.button} ${colors.buttonNeutral}`}
+        className={`${buttons.button} ${colors.buttonNeutral}`}
         onClick={onClick}
       >
-        See rest
+        <div className={styles.seeRestText}>See rest</div>
       </button>
     </div>
   );

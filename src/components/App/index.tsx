@@ -21,15 +21,13 @@ export default (): JSX.Element => {
       <Helmet>
         <title>Find a Deaf Church near you!</title>
       </Helmet>
-      <Loading />
-      <FadeOverlay>
-        <Search />
-        <ChurchModal />
-      </FadeOverlay>
       <Map />
       <YourLocation />
-      <Navigator />
       <SelectedBox />
+      <Search />
+      <ChurchModal />
+      <Navigator />
+      <Loading />
     </>
   );
 };

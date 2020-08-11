@@ -49,7 +49,12 @@ export default (props: Props): JSX.Element => {
         <div className={styles.services}>
           <div className={styles.servicesText}>Today&apos;s Services</div>
           {today.map((time) => (
-            <ServiceTime id={id} day="whatever" time={time} />
+            <ServiceTime
+              key={`${id}-${time.time}`}
+              id={id}
+              day="whatever"
+              time={time}
+            />
           ))}
         </div>
       )}

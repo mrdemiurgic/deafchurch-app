@@ -9,8 +9,6 @@ import {
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { LongLat } from '../../types/church';
-import colors from '../../styles/colors.module.css';
-import styles from './styles.module.css';
 
 import { showOverlay } from '../../store/userInterface';
 import { select, hover } from '../../store/markers';
@@ -18,6 +16,10 @@ import { setLongLat } from '../../store/viewport';
 import share, { hasShare } from '../../utils/share';
 
 import directions from '../../utils/direction';
+
+import buttons from '../../styles/buttons.module.css';
+import colors from '../../styles/colors.module.css';
+import styles from './styles.module.css';
 
 interface Props {
   id: string;
@@ -40,30 +42,28 @@ export default (props: Props): JSX.Element => {
 
   const moreInfo = () => {
     dispatch(select(id));
-    dispatch(hover(id));
     dispatch(showOverlay());
-    dispatch(setLongLat(longLat));
   };
 
   const numButtons = 2 + (hasShare ? 1 : 0);
   const width = `${100 / numButtons}%`;
-  const fontSize = hasShare ? '1.3em' : '1em';
+  const fontSize = hasShare ? '1.3em' : '0.95em';
 
   return (
-    <div className={styles.buttonsContainer}>
+    <div className={buttons.buttonsContainer}>
       <div
-        className={`${styles.buttonContainer} ${hasShare && styles.third}`}
+        className={`${buttons.buttonContainer} ${hasShare && buttons.third}`}
         style={{ width }}
       >
         <button
           type="button"
-          className={`${styles.button} ${colors.buttonNeutral}`}
+          className={`${buttons.button} ${colors.buttonNeutral}`}
           onClick={moreInfo}
           style={{ fontSize }}
         >
-          <FontAwesomeIcon icon={faInfoCircle} className={styles.icon} />
+          <FontAwesomeIcon icon={faInfoCircle} className={buttons.icon} />
           {numButtons < 3 && (
-            <div className={styles.text}>
+            <div className={buttons.text}>
               {numButtons < 3 ? 'more info' : 'info'}
             </div>
           )}
@@ -72,33 +72,33 @@ export default (props: Props): JSX.Element => {
 
       {hasShare && (
         <div
-          className={`${styles.buttonContainer} ${styles.third}`}
+          className={`${buttons.buttonContainer} ${buttons.third}`}
           style={{ width }}
         >
           <button
             type="button"
-            className={`${styles.button} ${colors.buttonPrimary}`}
+            className={`${buttons.button} ${colors.buttonPrimary}`}
             onClick={shareChurch}
             style={{ fontSize }}
           >
-            <FontAwesomeIcon icon={faShareAlt} className={styles.icon} />
-            {numButtons < 3 && <div className={styles.text}>share</div>}
+            <FontAwesomeIcon icon={faShareAlt} className={buttons.icon} />
+            {numButtons < 3 && <div className={buttons.text}>share</div>}
           </button>
         </div>
       )}
       <div
-        className={`${styles.buttonContainer} ${hasShare && styles.third}`}
+        className={`${buttons.buttonContainer} ${hasShare && buttons.third}`}
         style={{ width }}
       >
         <button
           type="button"
-          className={`${styles.button} ${colors.buttonAction}`}
+          className={`${buttons.button} ${colors.buttonAction}`}
           onClick={drive}
           style={{ fontSize }}
         >
-          <FontAwesomeIcon icon={faDirections} className={styles.icon} />
+          <FontAwesomeIcon icon={faDirections} className={buttons.icon} />
           {numButtons < 3 && (
-            <div className={styles.text}>
+            <div className={buttons.text}>
               {numButtons < 3 ? 'directions' : 'gps'}
             </div>
           )}

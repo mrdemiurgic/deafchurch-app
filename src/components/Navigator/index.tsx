@@ -7,12 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
-import { unselect } from '../../store/markers';
-import {
-  hideOverlay,
-  showOverlay,
-  setSearchText,
-} from '../../store/userInterface';
+import { unselect, unhover } from '../../store/markers';
+import { hideOverlay, showOverlay } from '../../store/userInterface';
 
 import colors from '../../styles/colors.module.css';
 import styles from './styles.module.css';
@@ -42,11 +38,13 @@ export default (): JSX.Element => {
   const clickMap = () => {
     dispatch(hideOverlay());
     dispatch(unselect());
+    dispatch(unhover());
+    // dispatch(unselect());
   };
 
   const clickSearch = () => {
     dispatch(unselect());
-    dispatch(setSearchText(''));
+    // dispatch(setSearchText(''));
     dispatch(showOverlay());
   };
 

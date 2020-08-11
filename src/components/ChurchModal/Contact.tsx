@@ -5,55 +5,54 @@ import {
   faPhone,
   faVideo,
   faEnvelope,
+  faPaperPlane,
+  faCopy,
 } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
 
+import colors from '../../styles/colors.module.css';
+import buttons from '../../styles/buttons.module.css';
 import styles from './styles.module.css';
+
+import ContactButtons from './ContactButtons';
 
 export default (): JSX.Element => {
   const { email, phoneNumber, videoPhoneNumber } = useSelector(
     getSelectedMarker,
   );
 
-  const callPhone = () => {
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
-  const callVideoPhone = () => {
-    window.location.href = `tel:${videoPhoneNumber}`;
-  };
-
-  const sendEmail = () => {
-    window.open(`mailto:${email}`);
-  };
-
   return (
     <>
       {email && (
         <div className={styles.card}>
-          <FontAwesomeIcon icon={faEnvelope} />
-          <a href={`mailto:${email}`} className={styles.contentLink}>
-            Send Email
-          </a>
-          <button type="button" onClick={sendEmail}>
-            send email
-          </button>
+          <div className={styles.cardHeader}>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className={styles.cardHeaderIcon}
+            />
+            E-mail
+          </div>
+          <ContactButtons type="email" data={email} />
         </div>
       )}
       {phoneNumber && (
         <div className={styles.card}>
-          <FontAwesomeIcon icon={faPhone} />
-          <a href={`tel:${phoneNumber}`} className={styles.contentLink}>
-            {phoneNumber}
-          </a>
+          <div className={styles.cardHeader}>
+            <FontAwesomeIcon icon={faPhone} className={styles.cardHeaderIcon} />
+            Phone
+          </div>
+          <ContactButtons type="phone" data={phoneNumber} />
         </div>
       )}
       {videoPhoneNumber && (
         <div className={styles.card}>
-          <FontAwesomeIcon icon={faVideo} />
-          {videoPhoneNumber}
+          <div className={styles.cardHeader}>
+            <FontAwesomeIcon icon={faVideo} className={styles.cardHeaderIcon} />
+            Video Phone
+          </div>
+          <ContactButtons type="videoPhone" data={videoPhoneNumber} />
         </div>
       )}
     </>

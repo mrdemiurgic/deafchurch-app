@@ -7,9 +7,9 @@ import { RootState } from '../../store';
 import { unselect } from '../../store/markers';
 import { hideOverlay } from '../../store/userInterface';
 
-import fade from '../../styles/transitions/fade.module.css';
+// import fade from '../../styles/transitions/fade.module.css';
 import styles from './styles.module.css';
-import { getSelectedMarker } from '../../store/markers/selectors';
+// import { getSelectedMarker } from '../../store/markers/selectors';
 
 interface Props {
   children: React.ReactNode;
@@ -19,19 +19,19 @@ export default (props: Props): JSX.Element => {
   const { children } = props;
 
   const dispatch = useDispatch();
-  const showOverlay = useSelector(
-    (state: RootState) => state.userInterface.showOverlay,
-  );
+  // const showOverlay = useSelector(
+  //   (state: RootState) => state.userInterface.showOverlay,
+  // );
 
-  const { id, show } = useSelector(getSelectedMarker);
+  // const { id, show } = useSelector(getSelectedMarker);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  // const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (showOverlay && containerRef.current !== null) {
-      containerRef.current.scrollTop = 0;
-    }
-  }, [showOverlay, show, id]);
+  // useEffect(() => {
+  //   if (showOverlay && containerRef.current !== null) {
+  //     containerRef.current.scrollTop = 0;
+  //   }
+  // }, [showOverlay, show, id]);
 
   const hideMe = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.preventDefault();
@@ -58,21 +58,21 @@ export default (props: Props): JSX.Element => {
   }, []);
 
   return (
-    <CSSTransition
-      mountOnEnter
-      unmountOnExit
-      in={showOverlay}
-      classNames={fade}
-      timeout={300}
+    // <CSSTransition
+    //   mountOnEnter
+    //   unmountOnExit
+    //   in={showOverlay}
+    //   classNames={fade}
+    //   timeout={300}
+    // >
+    <div
+      // ref={containerRef}
+      role="none"
+      className={styles.container}
+      onClick={hideMe}
     >
-      <div
-        ref={containerRef}
-        role="none"
-        className={styles.container}
-        onClick={hideMe}
-      >
-        {children}
-      </div>
-    </CSSTransition>
+      {children}
+    </div>
+    // </CSSTransition>
   );
 };

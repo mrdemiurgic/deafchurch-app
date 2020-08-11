@@ -21,7 +21,7 @@ export default (): JSX.Element => {
 
   const seeMap = () => {
     dispatch(hover(id));
-    dispatch(select(id));
+    // dispatch(select(id));
     dispatch(hideOverlay());
     dispatch(setLongLat(longLat));
     dispatch(setZoom([9]));

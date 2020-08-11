@@ -6,7 +6,7 @@
 .enterActive {
   opacity: 1;
   transition: 300ms opacity;
-  pointer-events: none;
+  pointer-events: active;
 }
 
 .enterDone {
@@ -28,4 +28,5 @@
 .exitDone {
   opacity: 0;
   pointer-events: none;
+  display: none;
 }

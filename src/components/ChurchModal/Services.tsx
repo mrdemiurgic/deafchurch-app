@@ -21,7 +21,7 @@ export default (): JSX.Element => {
           if (service.day) {
             return (
               <div key={`${id}-${service.day}`} className={styles.card}>
-                <div className={styles.serviceDay}>{service.day}</div>
+                <div className={styles.cardHeader}>{service.day}</div>
                 {service.times.length === 0 && (
                   <div className={styles.ministryTypeText}>
                     There are services on this day. Contact the church to find
@@ -30,7 +30,7 @@ export default (): JSX.Element => {
                 )}
                 {service.times.map((time) => (
                   <ServiceTime
-                    key={`${id}-${service.day}-${time}`}
+                    key={`${id}-${service.day}-${time.time}`}
                     day={service.day}
                     id={id}
                     time={time}

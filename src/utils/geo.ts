@@ -7,8 +7,6 @@ import { LongLat } from '../types/church';
 //   zoom: 3,
 // };
 
-const url = `https://api.ipdata.co?api-key=${process.env.REACT_APP_IPDATA_KEY}`;
-
 // Attempt ipdata.co first. If it fails, fallback to using browser's location service.
 
 const fromLocationService = async (): Promise<LongLat> =>
@@ -22,6 +20,8 @@ const fromLocationService = async (): Promise<LongLat> =>
       reject(new Error('navigator.geolocation not available'));
     }
   });
+
+const url = `https://api.ipdata.co?api-key=${process.env.REACT_APP_IPDATA_KEY}`;
 
 const fromIpData = async (): Promise<LongLat> => {
   const { status, data } = await axios.get(url);

@@ -3,8 +3,6 @@ import getGeo from '../utils/geo';
 
 import { LongLat } from '../types/church';
 
-// import { selectSuggestion } from './userInterface';
-
 interface ViewportState {
   zoom: [number];
   longLat: LongLat;
@@ -18,17 +16,24 @@ const defaultPosition = {
   originalLongLat: [-97.380979, 42.877772],
 };
 
-export const setInitialCenterFromGeo = createAsyncThunk('viewport/setInitialPosition', async () => {
-  const newLongLat = await getGeo();
-  return newLongLat;
-});
+export const setInitialCenterFromGeo = createAsyncThunk(
+  'viewport/setInitialPosition',
+  async () => {
+    const newLongLat = await getGeo();
+    return newLongLat;
+  },
+);
 
 const viewportSlice = createSlice({
   name: 'viewport',
   initialState: defaultPosition as ViewportState,
   reducers: {
-    setZoom: (state, action) => { state.zoom = action.payload; },
-    setLongLat: (state, action) => { state.longLat = action.payload; },
+    setZoom: (state, action) => {
+      state.zoom = action.payload;
+    },
+    setLongLat: (state, action) => {
+      state.longLat = action.payload;
+    },
     setInitialCenter: (state, action) => {
       const { zoom, longLat } = action.payload;
       state.zoom = zoom;
@@ -45,8 +50,6 @@ const viewportSlice = createSlice({
   },
 });
 
-export const {
-  setZoom, setLongLat, setInitialCenter,
-} = viewportSlice.actions;
+export const { setZoom, setLongLat, setInitialCenter } = viewportSlice.actions;
 
 export default viewportSlice.reducer;

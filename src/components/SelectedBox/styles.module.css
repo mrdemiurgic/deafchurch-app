@@ -25,7 +25,7 @@
   transform: scale(1);
   top: 0;
   width: 100%;
-  z-index: 8;
+  z-index: 22;
   padding: 10px 10px 0 10px;
   box-sizing: border-box;
 }
@@ -42,5 +42,6 @@
     margin-left: -200px;
     top: initial;
     bottom: 0;
+    padding: 10px 0 0 0;
   }
 }

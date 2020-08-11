@@ -1,5 +1,8 @@
+@value breakpoints: '../../styles/breakpoints.module.css';
+@value bp1 from breakpoints;
+
 @value colors: '../../styles/colors.module.css';
-@value whiteAlice, mapGreenspace, mapWater, mapWaterLight, mapRoadsDark, mapBaseLight, mapBase, mapRoads, mapRoadsLight, primary, primaryHover, primaryActive, darkGray, veryDarkGray, mediumGray, lightGray, veryLightGray from colors;
+@value whiteAlice, whiteAliceDark, whiteAliceBorder, mapGreenspace, mapWater, mapWaterLight, mapRoadsDark, mapBaseLight, mapBase, mapRoads, mapRoadsLight, primary, primaryHover, primaryActive, darkGray, veryDarkGray, mediumGray, lightGray, veryLightGray from colors;
 
 .container {
   width: auto;
@@ -25,9 +28,10 @@
 
 .services {
   margin-top: 5px;
-  background: mapBase;
+  background: whiteAliceDark;
+  color: mapBase;
   padding: 6px;
-  border: 1px solid mapRoads;
+  border: 1px solid whiteAliceBorder;
   border-radius: 5px;
 }
 
@@ -36,7 +40,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1em;
-  color: whiteAlice;
+  color: mapBase;
 }
 
 .name {
@@ -54,7 +58,7 @@
   text-transform: uppercase;
 }
 
-.seeMore {
+.seeRest {
   font-family: 'Roboto Condensed';
   margin: 5px;
   font-size: 1.2em;
@@ -64,62 +68,17 @@
   color: mapBase;
 }
 
+.seeRestText {
+  font-size: 1.2em;
+}
+
 .location {
   display: inline;
   font-weight: 900;
 }
 
-.buttonsContainer {
-  width: 100%;
-  padding-top: 10px;
-  box-sizing: border-box;
-}
-
-.buttonContainer {
-  vertical-align: top;
-  display: inline-block;
-  box-sizing: border-box;
-  padding-right: 5px;
-}
-
-.buttonContainer:last-child {
-  padding-right: 0;
-  padding-left: 5px;
-}
-
-.third {
-  padding-right: 6.666px;
-  padding-left: 0;
-}
-
-.third:not(:first-child) {
-  padding-left: 3.333px;
-  padding-right: 3.333px;
-}
-
-.third:last-child {
-  padding-left: 6.666px;
-  padding-right: 0;
-}
-
-.button {
-  font-family: 'Roboto Condensed';
-  cursor: pointer;
-  border-radius: 10px;
-  outline: none;
-  box-sizing: border-box;
-  text-transform: uppercase;
-  font-weight: 900;
-  height: 35px;
-  width: 100%;
-  transition: 0.3s background, 0.3s color, 0.3s border;
-}
-
-.icon {
-  margin: 0;
-}
-
-.text {
-  display: inline-block;
-  margin-left: 4px;
+@media screen and (min-width: bp1) {
+  .container {
+    margin: 10px 0 10px 0;
+  }
 }

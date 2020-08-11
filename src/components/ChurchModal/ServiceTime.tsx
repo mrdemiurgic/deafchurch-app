@@ -16,11 +16,10 @@ export default (props: Props): JSX.Element => {
 
   return (
     <div
-      key={`${id}-${day}-${time}`}
-      className={styles.timeBox}
-      style={{
-        background: time.time.indexOf('AM') !== -1 ? '#ffefc4' : '#c4e0ff',
-      }}
+      // key={`${id}-${day}-${time.time}}`}
+      className={`${styles.timeBox} ${
+        time.time.indexOf('AM') !== -1 ? styles.morningBg : styles.afternoonBg
+      }`}
     >
       <div className={styles.timeBoxText}>{time.time}</div>
       <FontAwesomeIcon

@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
 
+import FadeOverlay from '../FadeOverlay';
+
 import Banner from './Banner';
 import MinistryType from './MinistryType';
 import SeeOnMap from './SeeOnMap';
@@ -38,33 +40,35 @@ export default (): JSX.Element => {
   return (
     <CSSTransition
       in={showModal}
-      classNames={fade}
-      timeout={300}
       unmountOnExit
       mountOnEnter
+      classNames={fade}
+      timeout={300}
     >
-      <div className={styles.container}>
-        <Helmet>
-          <title>
-            {name}
-            (deafchurch.app)
-          </title>
-        </Helmet>
-        <div className={styles.innerContainer}>
-          <Picture />
-          <Header />
-          <Directions />
-          <Share />
-          <Website />
-          <SeeOnMap />
-          <Banner icon={faBible} text="Deaf Ministry Type" />
-          <MinistryType />
-          <Banner icon={faCalendarAlt} text="Services" />
-          <Services />
-          <Banner icon={faComments} text="Contact" />
-          <Contact />
+      <FadeOverlay>
+        <div className={styles.container}>
+          <Helmet>
+            <title>
+              {name}
+              (deafchurch.app)
+            </title>
+          </Helmet>
+          <div className={styles.innerContainer}>
+            <Picture />
+            <Header />
+            <Directions />
+            <Share />
+            <Website />
+            <SeeOnMap />
+            <Banner icon={faBible} text="Deaf Ministry Type" />
+            <MinistryType />
+            <Banner icon={faCalendarAlt} text="Services" />
+            <Services />
+            <Banner icon={faComments} text="Contact" />
+            <Contact />
+          </div>
         </div>
-      </div>
+      </FadeOverlay>
     </CSSTransition>
   );
 };

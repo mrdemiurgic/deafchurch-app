@@ -2,10 +2,12 @@
 @value bp1 from breakpoints;
 
 @value colors: '../../styles/colors.module.css';
-@value primary, primaryLight, whiteAlice, primaryDark, mapRoads, mapBase, mapBaseLight from colors;
+@value morning, afternoon, primary, primaryLight, whiteAlice, whiteAliceDark, whiteAliceBorder, mapRoadsLight, primaryDark, mapRoads, mapBase, mapBaseLight from colors;
 
 .container {
   position: absolute;
+  top: 0;
+  /* z-index: 19; */
   width: 100%;
 }
 
@@ -35,7 +37,8 @@
 .pix {
   position: absolute;
   top: 0px;
-  display: block;
+  /* padding: 23.4375% 0; */
+  /* display: block; */
   width: 100%;
   height: auto;
 }
@@ -79,10 +82,10 @@
 }
 
 .card {
-  background: mapBase;
+  background: whiteAliceDark;
   border-radius: 5px;
-  border: 1px solid mapRoads;
-  color: whiteAlice;
+  border: 1px solid whiteAliceBorder;
+  color: mapBase;
   padding: 5px;
   box-sizing: border-box;
   margin: 5px 10px 5px 10px;
@@ -149,12 +152,18 @@
   padding-inline-start: 10px;
 }
 
-.serviceDay {
+.cardHeader {
   font-size: 1.3em;
+  font-family: 'Roboto';
   font-weight: 500;
-  border-bottom: 1px solid mapRoads;
+  color: mapBase;
+  border-bottom: 1px solid mapRoadsLight;
   margin-bottom: 5px;
   padding-bottom: 5px;
+}
+
+.cardHeaderIcon {
+  margin-right: 10px;
 }
 
 .timeBox {
@@ -165,6 +174,14 @@
   font-weight: 700;
   padding: 4px 5px;
   border-radius: 5px;
+}
+
+.morningBg {
+  background: morning;
+}
+
+.afternoonBg {
+  background: afternoon;
 }
 
 .timeBoxText {

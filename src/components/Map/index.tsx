@@ -32,8 +32,12 @@ export default (): JSX.Element => {
       // eslint-disable-next-line react/style-prop-object
       style={mapStyle}
       containerStyle={{
-        position: 'fixed',
+        position: 'absolute',
         zIndex: 0,
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
         height: '100%',
         width: '100%',
       }}

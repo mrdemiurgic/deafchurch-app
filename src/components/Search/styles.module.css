@@ -5,7 +5,9 @@
 @value mapBase, mapRoads, mapRoadsLight, borderGray, whiteAlice, darkGray, mediumGray, primary, primaryHover, primaryActive from colors;
 
 .container {
-  position: relative;
+  z-index: 20;
+  top: 0;
+  /* position: absolute; */
   width: 100%;
   margin-top: 75px;
 }
@@ -70,5 +72,13 @@
     width: 400px;
     left: 50%;
     margin-left: -200px;
+  }
+
+  .inputContainer {
+    margin: 10px 0 10px 0;
+  }
+
+  .filterBoxContainer {
+    margin: 0 0 10px 0;
   }
 }

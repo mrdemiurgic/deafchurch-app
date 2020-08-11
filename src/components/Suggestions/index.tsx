@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import {
+  TransitionGroup,
+  SwitchTransition,
+  CSSTransition,
+} from 'react-transition-group';
 
 import { RootState } from '../../store';
 import Suggestion from './Suggestion';
@@ -38,6 +42,8 @@ export default (): JSX.Element => {
 
   const suggestions = showFull ? fullSuggestions : fullSuggestions.slice(0, 5);
 
+  const showSeeMore = !showFull && fullSuggestions.length > 5;
+
   useEffect(() => {
     setShowFull(false);
   }, [fullSuggestions]);
@@ -56,21 +62,21 @@ export default (): JSX.Element => {
             {renderSuggestion(suggestion, center)}
           </CSSTransition>
         ))}
-        {!showFull && fullSuggestions.length > 5 && (
-          <CSSTransition
-            key="seeRest"
-            mountOnEnter
-            unmountOnExit
-            classNames={fade}
-            timeout={300}
-          >
-            <SeeRest
-              onClick={() => setShowFull(true)}
-              numSuggestions={fullSuggestions.length}
-            />
-          </CSSTransition>
-        )}
       </TransitionGroup>
+      {/* <CSSTransition
+        mountOnEnter
+        unmountOnExit
+        in={showSeeMore}
+        classNames={fade}
+        timeout={300}
+      > */}
+      {showSeeMore && (
+        <SeeRest
+          onClick={() => setShowFull(true)}
+          numSuggestions={fullSuggestions.length}
+        />
+      )}
+      {/* </CSSTransition> */}
     </div>
   );
 };

@@ -1,8 +1,13 @@
 @value whiteAlice: #EBF2FA;
+@value whiteAliceDark: #DEEBF7;
+@value whiteAliceBorder: #CEE1F3;
 
 @value primaryDark: #DBBD16;
 @value primary: #ECD444;
 @value primaryLight: #F6E9A2;
+
+@value morning: #FAF3CA;
+@value afternoon: #bcdaf5;
 
 @value actionDark: #27AA68;
 @value action: #37D285;

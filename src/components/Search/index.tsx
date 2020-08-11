@@ -11,6 +11,8 @@ import {
   getSuggestions,
 } from '../../store/userInterface/selectors';
 
+import FadeOverlay from '../FadeOverlay';
+
 import SearchIcon from './SearchIcon';
 import Suggestions from '../Suggestions';
 import FilterBox from './FilterBox';
@@ -64,37 +66,39 @@ export default (): JSX.Element => {
     <CSSTransition
       in={show}
       classNames={fade}
-      timeout={300}
-      unmountOnExit
       mountOnEnter
+      // unmountOnExit
+      timeout={300}
     >
-      <div className={styles.container}>
-        <Title />
-        <form className={styles.searchBarForm} onSubmit={onSubmit}>
-          <div className={styles.inputContainer}>
-            <input
-              type="text"
-              className={styles.searchBarInput}
-              placeholder="search by name, state, city..."
-              ref={searchInput}
-              onChange={onChange}
-              onFocus={onFocus}
-              value={searchText}
-            />
-            <SearchIcon />
-          </div>
-        </form>
-        <CSSTransition
-          in={!hideFilterBox}
-          mountOnEnter
-          unmountOnExit
-          classNames={fade}
-          timeout={300}
-        >
-          <FilterBox />
-        </CSSTransition>
-        <Suggestions />
-      </div>
+      <FadeOverlay>
+        <div className={styles.container}>
+          <Title />
+          <form className={styles.searchBarForm} onSubmit={onSubmit}>
+            <div className={styles.inputContainer}>
+              <input
+                type="text"
+                className={styles.searchBarInput}
+                placeholder="search by name, state, city..."
+                ref={searchInput}
+                onChange={onChange}
+                onFocus={onFocus}
+                value={searchText}
+              />
+              <SearchIcon />
+            </div>
+          </form>
+          <CSSTransition
+            in={!hideFilterBox}
+            mountOnEnter
+            unmountOnExit
+            classNames={fade}
+            timeout={300}
+          >
+            <FilterBox />
+          </CSSTransition>
+          <Suggestions />
+        </div>
+      </FadeOverlay>
     </CSSTransition>
   );
 };
