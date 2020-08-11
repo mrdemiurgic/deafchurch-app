@@ -45,12 +45,12 @@
   color: mapBase;
 } */
 
-.selected {
-  transform: scale(1.1);
-}
-
 .unselected {
   background: primaryLight;
+}
+
+.selected {
+  transform: scale(1.075);
 }
 
 .icon {

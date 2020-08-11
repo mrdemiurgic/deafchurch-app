@@ -10,6 +10,7 @@ import {
   faPhoneVolume,
 } from '@fortawesome/free-solid-svg-icons';
 
+import styles from './styles.module.css';
 import buttons from '../../styles/buttons.module.css';
 import colors from '../../styles/colors.module.css';
 
@@ -27,7 +28,7 @@ export default (props: Props): JSX.Element => {
     window.location.href = `${type === 'email' ? 'mailto' : 'tel'}:${data}`;
   };
 
-  const tooltipRef = useRef<Clipboard>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className={buttons.buttonsContainer} style={{ padding: 0 }}>
@@ -35,22 +36,25 @@ export default (props: Props): JSX.Element => {
         className={buttons.buttonContainer}
         style={{ width: '50%', paddingRight: '2.5px' }}
       >
+        <div ref={tooltipRef} data-tip="Copied!" />
         <Clipboard
+          onSuccess={() => {
+            if (tooltipRef.current) {
+              ReactTooltip.show(tooltipRef.current);
+              setTimeout(() => {
+                ReactTooltip.hide();
+              }, 400);
+            }
+          }}
           className={`${buttons.button} ${colors.buttonNeutral}`}
           data-clipboard-text={data}
           style={{ fontSize: '1.1em' }}
-          ref={tooltipRef}
-          data-tip="Copied!"
-          onSuccess={() =>
-            tooltipRef.current !== null &&
-            ReactTooltip.show(tooltipRef.current as any)
-          }
         >
           <FontAwesomeIcon icon={faCopy} className={buttons.icon} />
           <div className={buttons.text}>Copy</div>
         </Clipboard>
-        <div data-tip="Copied!" />
-        <ReactTooltip place="top" effect="solid" scrollHide />
+
+        <ReactTooltip className={styles.tooltip} effect="solid" />
       </div>
       <div
         className={buttons.buttonContainer}

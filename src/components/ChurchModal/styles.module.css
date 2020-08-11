@@ -192,6 +192,16 @@
   margin-left: 5px;
 }
 
+.tooltip {
+  font-family: 'Roboto Condensed';
+  font-size: 1.3em !important;
+  font-weight: 500 !important;
+  border-radius: 5px !important;
+  background: mapBase !important;
+  border: 1px solid mapRoads !important;
+  color: aliceWhite !important;
+}
+
 @media screen and (min-width: bp1) {
   .container {
     position: absolute;
