@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import YourLocation from '.';
-
 import { CSSTransition } from 'react-transition-group';
+import YourLocation from '.';
 
 import { RootState } from '../../store';
 

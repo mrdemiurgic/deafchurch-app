@@ -9,7 +9,6 @@ import { Church, LongLat } from '../../types/church';
 import { SearchDoc, SearchDocData } from '../../types/userInterface';
 
 const SEARCH_LETTER_LIMIT = 3;
-const SUGGESTIONS_LIMIT = 5;
 
 const index = elasticlunr<SearchDoc>();
 index.addField('name');

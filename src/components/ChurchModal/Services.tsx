@@ -31,8 +31,6 @@ export default (): JSX.Element => {
                 {service.times.map((time) => (
                   <ServiceTime
                     key={`${id}-${service.day}-${time.time}`}
-                    day={service.day}
-                    id={id}
                     time={time}
                   />
                 ))}

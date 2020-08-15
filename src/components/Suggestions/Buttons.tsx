@@ -11,15 +11,13 @@ import {
 import { LongLat } from '../../types/church';
 
 import { showOverlay } from '../../store/userInterface';
-import { select, hover } from '../../store/markers';
-import { setLongLat } from '../../store/viewport';
+import { select } from '../../store/markers';
 import share, { hasShare } from '../../utils/share';
 
 import directions from '../../utils/direction';
 
 import buttons from '../../styles/buttons.module.css';
 import colors from '../../styles/colors.module.css';
-import styles from './styles.module.css';
 
 interface Props {
   id: string;
@@ -31,7 +29,7 @@ export default (props: Props): JSX.Element => {
   const { id, name, longLat } = props;
   const dispatch = useDispatch();
 
-  const drive = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const drive = () => {
     const url = directions(`${longLat[1]},${longLat[0]}`);
     window.open(url);
   };

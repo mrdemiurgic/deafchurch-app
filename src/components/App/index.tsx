@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import Map from '../Map';
 import Navigator from '../Navigator';
 import YourLocation from '../YourLocation/Container';
-import FadeOverlay from '../FadeOverlay';
 import ChurchModal from '../ChurchModal';
 import Search from '../Search';
 import SelectedBox from '../SelectedBox';

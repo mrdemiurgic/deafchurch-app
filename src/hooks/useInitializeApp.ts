@@ -39,12 +39,11 @@ export default (): void => {
           dispatch(finishedLoading());
         } else {
           dispatch(setInitialCenterFromGeo());
-          // dispatch(finishedLoading());
         }
       } else {
         dispatch(setInitialCenterFromGeo());
-        // dispatch(finishedLoading());
       }
     }
+    // eslint-disable-next-line
   }, [markers]);
 };

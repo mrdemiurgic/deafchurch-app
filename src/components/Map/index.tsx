@@ -43,13 +43,15 @@ export default (): JSX.Element => {
       }}
       zoom={zoom}
       center={longLat}
-      onClick={(map, event: any) => {
+      // eslint-disable-next-line
+      onClick={(_map, event: any) => {
         if (!event.originalEvent.defaultPrevented) deselectMarker();
       }}
-      onDragStart={(map, event: any) => {
+      onDragStart={() => {
         deselectMarker();
       }}
-      onDragEnd={(map, event: any) => {
+      // eslint-disable-next-line
+      onDragEnd={(_map, event: any) => {
         const { lng, lat } = event.target.transform.center;
         dispatch(setLongLat([lng, lat]));
       }}

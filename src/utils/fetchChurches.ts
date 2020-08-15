@@ -9,6 +9,7 @@ export default async (): Promise<Church[]> => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
+    // eslint-disable-next-line
     console.error(error);
     return [];
   }

@@ -1,15 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
-import { CSSTransition } from 'react-transition-group';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
+import { useDispatch } from 'react-redux';
 
 import { unselect } from '../../store/markers';
 import { hideOverlay } from '../../store/userInterface';
 
-// import fade from '../../styles/transitions/fade.module.css';
 import styles from './styles.module.css';
-// import { getSelectedMarker } from '../../store/markers/selectors';
 
 interface Props {
   children: React.ReactNode;
@@ -19,19 +15,6 @@ export default (props: Props): JSX.Element => {
   const { children } = props;
 
   const dispatch = useDispatch();
-  // const showOverlay = useSelector(
-  //   (state: RootState) => state.userInterface.showOverlay,
-  // );
-
-  // const { id, show } = useSelector(getSelectedMarker);
-
-  // const containerRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   if (showOverlay && containerRef.current !== null) {
-  //     containerRef.current.scrollTop = 0;
-  //   }
-  // }, [showOverlay, show, id]);
 
   const hideMe = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.preventDefault();
@@ -58,21 +41,8 @@ export default (props: Props): JSX.Element => {
   }, []);
 
   return (
-    // <CSSTransition
-    //   mountOnEnter
-    //   unmountOnExit
-    //   in={showOverlay}
-    //   classNames={fade}
-    //   timeout={300}
-    // >
-    <div
-      // ref={containerRef}
-      role="none"
-      className={styles.container}
-      onClick={hideMe}
-    >
+    <div role="none" className={styles.container} onClick={hideMe}>
       {children}
     </div>
-    // </CSSTransition>
   );
 };

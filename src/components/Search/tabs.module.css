@@ -36,15 +36,6 @@
     0.2s transform;
 }
 
-/* .button:hover {
-  color: mapBase;
-  background: primary;
-}
-
-.button:active {
-  color: mapBase;
-} */
-
 .unselected {
   background: primaryLight;
 }

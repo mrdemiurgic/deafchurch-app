@@ -5,15 +5,11 @@ import {
   faPhone,
   faVideo,
   faEnvelope,
-  faPaperPlane,
-  faCopy,
 } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
 
-import colors from '../../styles/colors.module.css';
-import buttons from '../../styles/buttons.module.css';
 import styles from './styles.module.css';
 
 import ContactButtons from './ContactButtons';

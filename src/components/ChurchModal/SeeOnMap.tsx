@@ -7,7 +7,7 @@ import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { getSelectedMarker } from '../../store/markers/selectors';
 
-import { hover, select } from '../../store/markers';
+import { hover } from '../../store/markers';
 import { hideOverlay } from '../../store/userInterface';
 import { setLongLat, setZoom } from '../../store/viewport';
 

@@ -71,7 +71,7 @@ export default (props: Props): JSX.Element => {
             className={buttons.icon}
           />
           <div className={buttons.text}>
-            {type === 'email' ? 'Send' : 'Call'}
+            {type === 'email' ? 'Compose' : 'Call'}
           </div>
         </button>
       </div>

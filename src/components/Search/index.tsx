@@ -45,8 +45,8 @@ export default (): JSX.Element => {
 
   const onSubmit = (
     e:
-      | React.FormEvent<HTMLFormElement>
-      | React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    | React.FormEvent<HTMLFormElement>
+    | React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
     if (searchInput.current !== null) {

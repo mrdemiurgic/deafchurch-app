@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  TransitionGroup,
-  SwitchTransition,
-  CSSTransition,
-} from 'react-transition-group';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { RootState } from '../../store';
 import Suggestion from './Suggestion';
@@ -12,7 +8,6 @@ import { getSuggestions } from '../../store/userInterface/selectors';
 import { SearchDocData } from '../../types/userInterface';
 
 import fade from '../../styles/transitions/fade.module.css';
-import colors from '../../styles/colors.module.css';
 import styles from './styles.module.css';
 
 import { LongLat } from '../../types/church';

@@ -24,15 +24,15 @@ const selected = (state: RootState) => state.markers.selected;
 const showSelected = (state: RootState) => state.markers.showSelected;
 const showHovering = (state: RootState) => state.markers.showHovering;
 const hovering = (state: RootState) => state.markers.hovering;
-const all = (state: RootState) => state.markers.all;
+const all = (state: RootState): Church[] => state.markers.all;
 
 const getSelectedChurch = createSelector(selected, all, (id, churches):
-  | Church
-  | undefined => churches.find((church: Church) => church.id === id));
+| Church
+| undefined => churches.find((church: Church) => church.id === id));
 
 const getHoveringChurch = createSelector(hovering, all, (id, churches):
-  | Church
-  | undefined => churches.find((church: Church) => church.id === id));
+| Church
+| undefined => churches.find((church: Church) => church.id === id));
 
 export const getFilteredMarkers = all;
 

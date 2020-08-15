@@ -6,13 +6,11 @@ import styles from './styles.module.css';
 import { ServiceTime, serviceTypeIcon } from '../../utils/services';
 
 interface Props {
-  id: string;
-  day: string;
   time: ServiceTime;
 }
 
 export default (props: Props): JSX.Element => {
-  const { id, day, time } = props;
+  const { time } = props;
 
   return (
     <div
